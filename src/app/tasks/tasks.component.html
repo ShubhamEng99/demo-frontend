@@ -1,0 +1,17 @@
+<nav>
+    <h3>Demo</h3> 
+</nav>
+
+<div class="main container">
+    <div>
+     <form [formGroup]='tasks' (ngSubmit)="createtask()">
+     <input type="text"  placeholder="Enter Task" name="content" formControlName='content'>
+     <button class="btn btn-primary btn-sm" type="submit">Add</button>
+     </form>
+    </div>
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</div>

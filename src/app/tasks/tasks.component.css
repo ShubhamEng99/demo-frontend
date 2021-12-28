@@ -1,0 +1,9 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+nav{
+    background-color: black;
+    color: aliceblue;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}

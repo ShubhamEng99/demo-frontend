@@ -27,8 +27,8 @@ subject=new BehaviorSubject('');
   createtask(data:any){
   return this.http.post(this.baseurl+'/task/create',data);
   }
-  gettasks(data:any){
-    return this.http.get(this.baseurl+'/tasks',data)
+  gettasks(id:any){
+    return this.http.get(this.baseurl+'/tasks/'+id)
   }
   deletetask(id:any){
     return this.http.delete(this.baseurl+'/task/delete/'+id)

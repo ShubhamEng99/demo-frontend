@@ -2,16 +2,20 @@
     <h3>Demo</h3> 
 </nav>
 
-<div class="main container">
-    <div>
-     <form [formGroup]='tasks' (ngSubmit)="createtask()">
-     <input type="text"  placeholder="Enter Task" name="content" formControlName='content'>
-     <button class="btn btn-primary btn-sm" type="submit">Add</button>
-     </form>
+<div class="container">
+    <div class="main">
+        <div class="left">
+            <form>
+            <input type="text"  placeholder="Enter Task" name="content" [(ngModel)]="data">
+            <button *ngIf="!update" class="btn btn-primary btn-sm" type="submit" (click)="createtask()">Add</button>
+            <button *ngIf="update" class="btn btn-primary btn-sm" type="submit" (click)="updatetask()">update</button>
+            </form>
+           </div>
+           <div class="right">
+               <ul>
+                   <li *ngFor="let i of taskslist">{{i.content}} <button class="btn btn-danger" (click)="delete(i._id)">del</button><button class="btn btn-success" (click)="updatetaskid(i._id,i.content)">edit</button></li>
+               </ul>
+           </div>
     </div>
-    <div>
-        <ul>
-            <li></li>
-        </ul>
-    </div>
+    
 </div>
